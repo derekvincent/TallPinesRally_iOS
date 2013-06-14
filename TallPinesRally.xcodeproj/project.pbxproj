@@ -50,6 +50,7 @@
 		1AA6E6C91648B769000994E4 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1AA6E6C81648B769000994E4 /* Default-568h@2x.png */; };
 		1AA6E6CD1648D820000994E4 /* tprFeedTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AA6E6CC1648D820000994E4 /* tprFeedTableCell.m */; };
 		1AA6E6D0164CB123000994E4 /* schedule.html in Resources */ = {isa = PBXBuildFile; fileRef = 1AA6E6CF164CB123000994E4 /* schedule.html */; };
+		1AA97901176B7EC900D1E72D /* ReadMe in Resources */ = {isa = PBXBuildFile; fileRef = 1AA97900176B7EC900D1E72D /* ReadMe */; };
 		1AC21780164DAA3100C75883 /* tp_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 1AC2177F164DAA3100C75883 /* tp_icon.png */; };
 		1AC21782164DAA4D00C75883 /* tp_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 1AC21781164DAA4D00C75883 /* tp_icon.png */; };
 /* End PBXBuildFile section */
@@ -117,6 +118,7 @@
 		1AA6E6CB1648D81F000994E4 /* tprFeedTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tprFeedTableCell.h; sourceTree = "<group>"; };
 		1AA6E6CC1648D820000994E4 /* tprFeedTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = tprFeedTableCell.m; sourceTree = "<group>"; };
 		1AA6E6CF164CB123000994E4 /* schedule.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = schedule.html; sourceTree = "<group>"; };
+		1AA97900176B7EC900D1E72D /* ReadMe */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ReadMe; sourceTree = "<group>"; };
 		1AC2177F164DAA3100C75883 /* tp_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tp_icon.png; sourceTree = "<group>"; };
 		1AC21781164DAA4D00C75883 /* tp_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tp_icon.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -209,6 +211,7 @@
 		1A87773E163A087F00CFF85D = {
 			isa = PBXGroup;
 			children = (
+				1AA97900176B7EC900D1E72D /* ReadMe */,
 				1AC21781164DAA4D00C75883 /* tp_icon.png */,
 				1A2C03B21645A66F007D3F43 /* Utillities.h */,
 				1A2C03B31645A66F007D3F43 /* Utillities.m */,
@@ -370,6 +373,7 @@
 				1AA6E6D0164CB123000994E4 /* schedule.html in Resources */,
 				1AC21780164DAA3100C75883 /* tp_icon.png in Resources */,
 				1AC21782164DAA4D00C75883 /* tp_icon.png in Resources */,
+				1AA97901176B7EC900D1E72D /* ReadMe in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
