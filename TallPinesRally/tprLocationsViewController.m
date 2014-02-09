@@ -52,9 +52,9 @@
 {    
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
     
-    
-    
+    cell.textLabel.font = [UIFont fontWithName:@"ITCAvantGardeStd-Md" size:cell.textLabel.font.pointSize];
     cell.textLabel.text = [[_locationsArray objectAtIndex:indexPath.row] objectAtIndex:0];
+    cell.detailTextLabel.font = [UIFont fontWithName:@"ITCAvantGardeStd-Md" size:cell.detailTextLabel.font.pointSize];
     cell.detailTextLabel.text = [[_locationsArray objectAtIndex:indexPath.row] objectAtIndex:1];
     cell.detailTextLabel.numberOfLines = 0; 
     

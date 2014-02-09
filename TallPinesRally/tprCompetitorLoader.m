@@ -18,7 +18,8 @@
 
 - (void)fetchCompetitorXML:(CompetitorLoaderCompleteBlock)c
 {
-    NSURL *url = [NSURL URLWithString:@"http://www.directdynamics.ca/teams.xml"];
+    //NSURL *url = [NSURL URLWithString:@"http://www.directdynamics.ca/teams.xml"];
+    NSURL *url = [NSURL URLWithString:@"http://tallpinesrally.com/compete/entrylist?xml=1"];
 
         dispatch_async(kBgQueue, ^{
             

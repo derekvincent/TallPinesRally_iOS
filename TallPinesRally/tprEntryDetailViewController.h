@@ -20,6 +20,16 @@
 @property (strong, nonatomic) IBOutlet UILabel* carNumberLabel;
 @property (strong, nonatomic) IBOutlet UILabel* startOrderLabel;
 @property (strong, nonatomic) IBOutlet UIImageView* teamImageView;
-@property (strong, nonatomic) IBOutlet UITextView* teamDecriptionView; 
+@property (strong, nonatomic) IBOutlet UITextView* teamDecriptionView;
+@property (strong, nonatomic) IBOutlet UILabel* poistionLabel;
+@property (strong, nonatomic) IBOutlet UILabel* classPoistionLabel;
+@property (strong, nonatomic) IBOutlet UILabel* stageTimeLabel;
+@property (strong, nonatomic) IBOutlet UILabel* diffToLeaderLabel;
+@property (strong, nonatomic) IBOutlet UILabel* diffToPreviousLabel;
+@property (strong, nonatomic) IBOutlet UILabel* dnfLabel;
+@property (strong, nonatomic) IBOutlet UILabel* dnfStageLabel;
+@property (strong, nonatomic) IBOutlet UILabel* dnfReasonLabel;
 
+@property (strong, nonatomic) IBOutlet UIView* resultsView;
+@property (strong, nonatomic) IBOutlet UIView* dnfView;
 @end

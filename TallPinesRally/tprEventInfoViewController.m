@@ -21,6 +21,7 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     
+    //[self setEdgesForExtendedLayout:UIRectEdgeNone];
     
     NSString *path;
     NSBundle *thisBundle = [NSBundle mainBundle];

@@ -48,12 +48,54 @@
     self.carLabel.text = competitor.car; 
     self.classLabel.text = competitor.class;
     self.carNumberLabel.text = [NSString stringWithFormat:@"%d", competitor.carNumber];
-    self.startOrderLabel.text = [NSString stringWithFormat:@"%d", competitor.startorder];
-    self.teamImageView.image = competitor.teamImage;
-    self.teamDecriptionView.text = competitor.comment;
+    self.startOrderLabel.text = competitor.getStartOrderWithOrdinalSuffix;
+    self.teamDecriptionView.text = competitor.bio;
     
-    
-   
+    if (competitor.isDNF) {
+        // Hide Results information!
+        [self.resultsView setHidden:TRUE];
+        //Show DNF information!
+        [self.dnfView setHidden:FALSE];
+        
+        [self.dnfView setBackgroundColor:[UIColor colorWithRed:255.0f/255.0f green:99.0f/255.0f blue:71.0f/255.0f alpha:0.1]];
+        self.dnfStageLabel.text = [NSString stringWithFormat:@"DNF - %@", competitor.dnfStage];
+        self.dnfReasonLabel.text = competitor.dnfComment;
+
+    } else {
+        //Hide the DNF Page
+        [self.dnfView setHidden:TRUE];
+        // Show the results panel
+        [self.resultsView setHidden:FALSE]; 
+        if (competitor.overallPosition > 0 && competitor.overallPosition < 999)
+        {
+            self.poistionLabel.text = competitor.getOverallPoistionWithOrdinalSuffix;
+            self.classPoistionLabel.text = competitor.getClassPoistionWithOrdinalSuffix;
+            self.stageTimeLabel.text = [NSString stringWithFormat:@"Total stage time is %@", competitor.totalTime];
+            if (competitor.overallPosition == 1) {
+                self.diffToPreviousLabel.text = @"";
+                self.diffToLeaderLabel.text = @"";
+            } else {
+                self.diffToLeaderLabel.text = [NSString stringWithFormat:@"%@ behind the overall leader", competitor.getDiffToLeaderFormated];
+                if (competitor.overallPosition > 2)
+                {
+                    self.diffToPreviousLabel.text = [NSString stringWithFormat:@"%@ behind the %@ place competitor", competitor.getDiffToPreviousFormated, competitor.getPreviousPositionWithOrdinalSuffix];
+                    [self.diffToPreviousLabel sizeToFit];
+                } else {
+                    self.diffToPreviousLabel.text = @"";
+                }
+            }
+        } else {
+            // If the position number are not between 1 and 998 then we have no results... hide the results panel!
+            [self.resultsView setHidden:TRUE];
+            // We happen to get a withdraw then we show it
+            if (competitor.isWithdrawn) {
+                [self.dnfView setHidden:FALSE];
+                [self.dnfView setBackgroundColor:[UIColor colorWithRed:255.0f/255.0f green:99.0f/255.0f blue:71.0f/255.0f alpha:0.1]];
+                self.dnfStageLabel.text = @"WITHDRAWN";
+                self.dnfReasonLabel.text = @""; 
+            }
+        }
+    }
 }
 
 - (void)didReceiveMemoryWarning
