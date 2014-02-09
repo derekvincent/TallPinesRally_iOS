@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface tprCompetitor : NSObject
+@interface tprCompetitor : NSObject <NSCoding>
 
 @property (assign, nonatomic) NSInteger id;
 @property (strong, nonatomic) NSString* driver;
@@ -22,7 +22,24 @@
 @property (assign, nonatomic) NSInteger startorder;
 @property (assign, nonatomic) NSInteger carNumber;
 @property (assign, nonatomic) NSInteger version;
+@property (strong, nonatomic) NSString *bio;
 @property (strong, nonatomic) UIImage* teamImage;
+@property (assign, nonatomic) NSInteger overallPosition;
+@property (strong, nonatomic) NSString *totalTime;
+@property (assign, nonatomic) NSInteger classPosition;
+@property (strong, nonatomic) NSString *diffLeader;
+@property (strong, nonatomic) NSString *diffPrevious;
+@property (assign, nonatomic, getter=isDNF) BOOL dnf;
+@property (strong, nonatomic) NSString *dnfStage;
+@property (strong, nonatomic) NSString *dnfComment;
+@property (assign, nonatomic, getter=isWithdrawn) BOOL *withdrawn;
 
-
+-(NSString *)classShorter;
+-(NSString *)getStartOrderWithOrdinalSuffix;
+-(NSString *)getOverallPoistionWithOrdinalSuffix;
+-(NSString *)getPreviousPositionWithOrdinalSuffix; 
+-(NSString *)getClassPoistionWithOrdinalSuffix;
+-(NSString *)getDNFStageWithOrdinalSuffix;
+-(NSString *)getDiffToLeaderFormated;
+-(NSString *)getDiffToPreviousFormated; 
 @end

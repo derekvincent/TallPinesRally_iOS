@@ -16,7 +16,7 @@
 
 -(void)fetchFeedXML:(FeedLoaderCompleteBlock)c
 {
-    NSURL *url = [NSURL URLWithString:@"https://api.twitter.com/1/statuses/user_timeline.xml?id=tallpinesrally&since_id=141901385259155456"];
+    NSURL *url = [NSURL URLWithString:@"https://api.twitter.com/1.1/statuses/user_timeline.xml?id=tallpinesrally&since_id=141901385259155456"];
     
     dispatch_async(kBgQueue, ^{
         

@@ -35,12 +35,12 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     [self.navigationController setNavigationBarHidden:NO];
-    NSLog(@"Current Index: %@", self.detailLocation);
+    //NSLog(@"Current Index: %@", self.detailLocation);
     NSString *path;
     NSBundle *thisBundle = [NSBundle mainBundle];
     path = [thisBundle pathForResource: self.detailLocation ofType:@"html"];
     
-    NSLog(@"Spectator Load path: %@", path);
+    //NSLog(@"Spectator Load path: %@", path);
     NSURL *eventInfoURL = [NSURL fileURLWithPath:path];
     [_locationWebView loadRequest:[NSURLRequest requestWithURL:eventInfoURL]];
 }
