@@ -5,21 +5,13 @@
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleDisplayName</key>
-	<string>${PRODUCT_NAME}</string>
+	<string>Tall Pines Rally</string>
 	<key>CFBundleExecutable</key>
 	<string>${EXECUTABLE_NAME}</string>
 	<key>CFBundleIcons</key>
-	<dict>
-		<key>CFBundlePrimaryIcon</key>
-		<dict>
-			<key>CFBundleIconFiles</key>
-			<array>
-				<string>tp_icon</string>
-				<string>tp_icon@2x.png</string>
-				<string>tp_icon.png</string>
-			</array>
-		</dict>
-	</dict>
+	<dict/>
+	<key>CFBundleIcons~ipad</key>
+	<dict/>
 	<key>CFBundleIdentifier</key>
 	<string>net.kemikal.${PRODUCT_NAME:rfc1034identifier}</string>
 	<key>CFBundleInfoDictionaryVersion</key>
@@ -29,70 +21,17 @@
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
-	<string>1.2013.2</string>
+	<string>1.2014.0</string>
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>CFBundleVersion</key>
-	<string>1.2</string>
+	<string>13</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>UIAppFonts</key>
 	<array>
 		<string>ITCAvantGardeStd-Md.otf</string>
 		<string>ITCAvantGardeStd-Demi.otf</string>
-	</array>
-	<key>UILaunchImages</key>
-	<array>
-		<dict>
-			<key>UILaunchImageMinimumOSVersion</key>
-			<string>7.0</string>
-			<key>UILaunchImageName</key>
-			<string>Default</string>
-			<key>UILaunchImageOrientation</key>
-			<string>Portrait</string>
-			<key>UILaunchImageSize</key>
-			<string>{320, 568}</string>
-		</dict>
-		<dict>
-			<key>UILaunchImageMinimumOSVersion</key>
-			<string>7.0</string>
-			<key>UILaunchImageName</key>
-			<string>Default</string>
-			<key>UILaunchImageOrientation</key>
-			<string>Portrait</string>
-			<key>UILaunchImageSize</key>
-			<string>{320, 568}</string>
-		</dict>
-		<dict>
-			<key>UILaunchImageMinimumOSVersion</key>
-			<string>7.0</string>
-			<key>UILaunchImageName</key>
-			<string>Default</string>
-			<key>UILaunchImageOrientation</key>
-			<string>Portrait</string>
-			<key>UILaunchImageSize</key>
-			<string>{320, 480}</string>
-		</dict>
-		<dict>
-			<key>UILaunchImageMinimumOSVersion</key>
-			<string>7.0</string>
-			<key>UILaunchImageName</key>
-			<string>Default</string>
-			<key>UILaunchImageOrientation</key>
-			<string>Portrait</string>
-			<key>UILaunchImageSize</key>
-			<string>{320, 480}</string>
-		</dict>
-		<dict>
-			<key>UILaunchImageMinimumOSVersion</key>
-			<string>7.0</string>
-			<key>UILaunchImageName</key>
-			<string>Default</string>
-			<key>UILaunchImageOrientation</key>
-			<string>Portrait</string>
-			<key>UILaunchImageSize</key>
-			<string>{320, 568}</string>
-		</dict>
 	</array>
 	<key>UIMainStoryboardFile</key>
 	<string>MainStoryboard</string>

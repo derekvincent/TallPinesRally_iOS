@@ -45,7 +45,7 @@
 }
 
 -(void)webViewDidFinishLoad:(UIWebView *)webView{
-    [self.navigationController pushViewController:eventWebView animated:YES];
+    //[self.navigationController pushViewController:eventWebView animated:YES];
  
 }
 

@@ -48,8 +48,8 @@
     NSURL *urlCompetitors = [NSURL URLWithString:@"http://tallpinesrally.com/compete/entrylist?xml=1"];
     //NSURL *urlOverallResults = [NSURL URLWithString:@"http://kemikal.net/stOver.xml"];
     //NSURL *urlRetirements = [NSURL URLWithString:@"http://kemikal.net/retirement.xml"];
-    NSURL *urlOverallResults = [NSURL URLWithString:@"http://rallyscoring.com/results/2013/TallPines/stOver.xml"];
-    NSURL *urlRetirements = [NSURL URLWithString:@"http://rallyscoring.com/results/2013/TallPines/retirement.xml"];
+    NSURL *urlOverallResults = [NSURL URLWithString:@"http://rallyscoring.com/results/2014/TallPines/stOver.xml"];
+    NSURL *urlRetirements = [NSURL URLWithString:@"http://rallyscoring.com/results/2014/TallPines/retirement.xml"];
     
     
     dispatch_async(kBgQueue, ^{
@@ -94,26 +94,6 @@
                     team.withdrawn = TRUE;
                 }
                 
-                /* No Photo Data currently...
-                //Preload the Team image if avaliable
-                if (team.photo.length > 0) {
-                    NSString *teamPhoto = @"http://directdynamics.ca/images/";
-                    teamPhoto = [teamPhoto stringByAppendingString:team.photo];
-                    
-                    NSLog(@"Team Photo ID: %@", teamPhoto);
-                    
-                    Utillities *utils = [[Utillities alloc] init];
-                    UIImage *image = [utils getCachedImage:teamPhoto imageName:team.photo];
-                    
-                    //NSURL *imageURL = [NSURL URLWithString:teamPhoto];
-                    //NSData *imageData = [NSData dataWithContentsOfURL:imageURL];
-                    //UIImage *image = [UIImage imageWithData:imageData];
-                    
-                    team.teamImage = image;
-                    
-                }
-                */
-                
                 //NSLog(@"Competitor %i Driver: %@ coDriver %@", team.id, team.driver, team.codriver);
                 // If the start order of a single team is greater then 0 the we have  starting order... 
                 if (team.startorder > 0) _startingOrder = TRUE;
@@ -126,7 +106,7 @@
             //Should be saving it to the NSCODER? when working?
             //[self saveCompetitorsToStorage];
             // Call this one we have created the Competitors object - important!!!!
-            networkIssues = TRUE;
+            //networkIssues = TRUE;
             
             // Once we have the competitors we check for the results...
             //We can only do this if we have competitors since we need them to map the results to
@@ -267,7 +247,7 @@
             competitor.diffLeader = diffLeader;
             competitor.diffPrevious = diffPrev;
             
-            stop = TRUE;
+            //stop = TRUE;
         }
         
     }];
@@ -283,7 +263,7 @@
             competitor.dnfStage = stage;
             competitor.dnfComment = comment;
             
-            stop = TRUE;
+            //stop = TRUE;
         }
     }];
 }

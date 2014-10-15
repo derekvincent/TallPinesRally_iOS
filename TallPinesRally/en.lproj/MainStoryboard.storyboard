@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4514" systemVersion="13A603" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="4">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="14A388b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="4">
     <dependencies>
         <deployment version="1552" defaultVersion="1536" identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
     </dependencies>
     <scenes>
-        <!--Tpr Event Info View Controller - Event Info-->
+        <!--Event Info-->
         <scene sceneID="11">
             <objects>
                 <viewController title="Event Info" id="2" customClass="tprEventInfoViewController" sceneMemberID="viewController">
@@ -23,7 +23,7 @@
                                     <outlet property="delegate" destination="2" id="oc6-EV-bJH"/>
                                 </connections>
                             </webView>
-                            <imageView contentMode="scaleAspectFit" image="tp2013banner.png" id="WwY-0e-S12">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" image="Banner" id="WwY-0e-S12">
                                 <rect key="frame" x="0.0" y="20" width="320" height="75"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <inset key="insetFor6xAndEarlier" minX="0.0" minY="20" maxX="0.0" maxY="-20"/>
@@ -33,7 +33,7 @@
                         <inset key="insetFor6xAndEarlier" minX="0.0" minY="20" maxX="0.0" maxY="-20"/>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
-                    <tabBarItem key="tabBarItem" title="About" image="news_icon.png" id="7"/>
+                    <tabBarItem key="tabBarItem" title="About" image="news_icon" id="7"/>
                     <connections>
                         <outlet property="eventWebView" destination="WWz-QK-paE" id="gaQ-gx-uk8"/>
                     </connections>
@@ -42,7 +42,7 @@
             </objects>
             <point key="canvasLocation" x="653" y="-138"/>
         </scene>
-        <!--Tpr App Info View Controller - Info-->
+        <!--Info-->
         <scene sceneID="hgu-yI-55n">
             <objects>
                 <viewController id="m2L-eF-NYp" customClass="tprAppInfoViewController" sceneMemberID="viewController">
@@ -126,7 +126,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Info" image="event_info_icon.png" id="2dk-y4-G8m"/>
+                    <tabBarItem key="tabBarItem" title="Info" image="event_info_icon" id="2dk-y4-G8m"/>
                     <connections>
                         <outlet property="facebookButton" destination="hQO-I5-Jt1" id="Vbr-my-c5R"/>
                         <outlet property="scroller" destination="ihC-QK-N9C" id="EJW-IE-Mxo"/>
@@ -136,51 +136,7 @@
             </objects>
             <point key="canvasLocation" x="616" y="2514"/>
         </scene>
-        <!--Tpr Feed View Controller - News-->
-        <scene sceneID="YiT-Tg-aa7">
-            <objects>
-                <viewController id="PPG-Dm-zFn" customClass="tprFeedViewController" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="Vle-nU-fuc">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" indentationWidth="10" reuseIdentifier="feedCell" id="T8g-Ca-TeV" customClass="tprFeedTableCell">
-                                <rect key="frame" x="0.0" y="22" width="320" height="44"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="T8g-Ca-TeV" id="Cm6-TF-Ypb">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" horizontalHuggingPriority="240" editable="NO" id="U1e-Bx-6rj">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                            <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                            <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="14"/>
-                                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                            <dataDetectorType key="dataDetectorTypes" link="YES"/>
-                                        </textView>
-                                    </subviews>
-                                </tableViewCellContentView>
-                                <connections>
-                                    <outlet property="twTextView" destination="U1e-Bx-6rj" id="EPB-HJ-qEp"/>
-                                </connections>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="PPG-Dm-zFn" id="E8k-ul-oUl"/>
-                            <outlet property="delegate" destination="PPG-Dm-zFn" id="LF2-qz-QUf"/>
-                        </connections>
-                    </tableView>
-                    <tabBarItem key="tabBarItem" enabled="NO" title="News" image="news_icon.png" id="0ae-wt-lNM"/>
-                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="GLr-7N-yi5" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="635" y="3243"/>
-        </scene>
-        <!--Tpr Locations View Controller - Spectator Locations-->
+        <!--Spectator Locations-->
         <scene sceneID="1JP-1V-rMV">
             <objects>
                 <viewController id="5nT-Dg-GqH" customClass="tprLocationsViewController" sceneMemberID="viewController">
@@ -196,14 +152,14 @@
                                     <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="wX4-HK-IuK">
+                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="wX4-HK-IuK">
                                             <rect key="frame" x="15" y="2" width="36" height="22"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         </label>
-                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="mPm-kB-A8S">
+                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="mPm-kB-A8S">
                                             <rect key="frame" x="15" y="24" width="50" height="17"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -254,7 +210,7 @@
             </objects>
             <point key="canvasLocation" x="2032" y="1186"/>
         </scene>
-        <!--Tpr Entry View Controller - Competitors-->
+        <!--Competitors-->
         <scene sceneID="8n9-nK-s8U">
             <objects>
                 <viewController id="hxp-b4-t5V" customClass="tprEntryViewController" sceneMemberID="viewController">
@@ -736,7 +692,7 @@
             </objects>
             <point key="canvasLocation" x="1658" y="1815"/>
         </scene>
-        <!--Tpr Schedule View Controller - Second-->
+        <!--Second-->
         <scene sceneID="13">
             <objects>
                 <viewController title="Second" id="3" customClass="tprScheduleViewController" sceneMemberID="viewController">
@@ -754,7 +710,7 @@
                                     <outlet property="delegate" destination="3" id="UXp-YT-pxl"/>
                                 </connections>
                             </webView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" image="tp2013banner.png" id="Ljp-ia-T9v">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" image="Banner" id="Ljp-ia-T9v">
                                 <rect key="frame" x="0.0" y="20" width="320" height="75"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <inset key="insetFor6xAndEarlier" minX="0.0" minY="20" maxX="0.0" maxY="-20"/>
@@ -764,7 +720,7 @@
                         <inset key="insetFor6xAndEarlier" minX="15" minY="0.0" maxX="-15" maxY="0.0"/>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
-                    <tabBarItem key="tabBarItem" title="Schedule" image="schedule_icon.png" id="6"/>
+                    <tabBarItem key="tabBarItem" title="Schedule" image="schedule_icon" id="6"/>
                     <connections>
                         <outlet property="scheduleWebView" destination="lCE-eb-ws9" id="k6z-4B-94y"/>
                     </connections>
@@ -795,11 +751,11 @@
             </objects>
             <point key="canvasLocation" x="-86" y="1160"/>
         </scene>
-        <!--Navigation Controller - Spectators-->
+        <!--Spectators-->
         <scene sceneID="Geb-On-RCn">
             <objects>
                 <navigationController id="fqa-Y3-9D8" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Spectators" image="locations_icon.png" id="5A6-xe-9dm"/>
+                    <tabBarItem key="tabBarItem" title="Spectators" image="locations_icon" id="5A6-xe-9dm"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="hpI-zr-6il">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -814,11 +770,11 @@
             </objects>
             <point key="canvasLocation" x="653" y="1160"/>
         </scene>
-        <!--Navigation Controller - Competitors-->
+        <!--Competitors-->
         <scene sceneID="3qc-nR-Uuz">
             <objects>
                 <navigationController id="O62-bG-7Vk" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" tag="2" title="Competitors" image="entry_list_icon.png" id="NhA-H1-EOR"/>
+                    <tabBarItem key="tabBarItem" tag="2" title="Competitors" image="entry_list_icon" id="NhA-H1-EOR"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="cvL-al-r9o">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -835,15 +791,15 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Banner" width="732" height="172"/>
         <image name="black_circle_55.png" width="55" height="55"/>
-        <image name="entry_list_icon.png" width="27" height="27"/>
-        <image name="event_info_icon.png" width="27" height="27"/>
+        <image name="entry_list_icon" width="27" height="27"/>
+        <image name="event_info_icon" width="27" height="27"/>
         <image name="fblikebutton.png" width="89" height="40"/>
         <image name="first.png" width="30" height="30"/>
-        <image name="locations_icon.png" width="27" height="27"/>
-        <image name="news_icon.png" width="27" height="27"/>
-        <image name="schedule_icon.png" width="27" height="27"/>
-        <image name="tp2013banner.png" width="366" height="86"/>
+        <image name="locations_icon" width="27" height="27"/>
+        <image name="news_icon" width="27" height="27"/>
+        <image name="schedule_icon" width="27" height="27"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>

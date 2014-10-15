@@ -24,7 +24,7 @@
     [super viewDidLoad];
     
     _locationsArray = [NSMutableArray array];
-    [_locationsArray addObject:[NSMutableArray arrayWithObjects:@"Rally Headquarters and Service",@"Enjoy a behind the scenes view into the cars and service crews. As well as the cerimonial start and finsih of the event.", @"rallyhq", nil]];
+    [_locationsArray addObject:[NSMutableArray arrayWithObjects:@"Service Area & Rally HQ",@"Enjoy a behind the scenes view into the cars and service crews. As well as the cerimonial start and finsih of the event.", @"rallyhq", nil]];
     [_locationsArray addObject:[NSMutableArray arrayWithObjects:@"Iron Bridge Spectator Area",@"The classic and popular Iron Bridge area never fails to entertain!", @"ironbridge", nil]];
     [_locationsArray addObject:[NSMutableArray arrayWithObjects:@"Golton Super Special Spectator Area",@"Superb viewing of the cars in action at this Super Special night stage.",@"golton", nil]];
 

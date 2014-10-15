@@ -28,7 +28,8 @@
 
 - (void)viewDidAppear:(BOOL)animated
 {
-
+    [super viewDidAppear:animated];
+    
 }
 - (void)viewDidLoad
 {
@@ -47,7 +48,7 @@
 
 -(void)viewDidDisappear:(BOOL)animated
 {
-    
+    [super viewDidDisappear:animated]; 
     
 }
 
