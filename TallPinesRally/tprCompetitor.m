@@ -7,6 +7,7 @@
 //
 
 #import "tprCompetitor.h"
+#import "tprPenalty.h"
 
 @implementation tprCompetitor
 
@@ -23,7 +24,7 @@
 @synthesize status = _status;
 @synthesize comment = _comment;
 @synthesize teamImage = _teamImage;
-
+/*
 -(id)initWithCoder:(NSCoder *)decoder
 {
     self = [super init];
@@ -69,6 +70,7 @@
     //[coder encodeObject:_teamImage forKey:@"teamImage"];
     
 }
+*/
 
 -(void)totalTime:(NSString *)totalTime
 {
@@ -205,5 +207,44 @@
     }
     
     return prevFormated;
+}
+
+-(void)addPenalty:(NSString *)penalty control:(NSString *)control remark:(NSString *)remark driverCodriver:(NSString *)driverCodriver
+{
+    tprPenalty *infraction = [[tprPenalty alloc] initWithCarNumber:self.car
+                                                 driverCodriver:driverCodriver
+                                                          class:_class
+                                                        control:control
+                                                         remark:remark
+                                                        penalty:penalty];
+    if (!self.penalties) {
+        self.penalties = [[NSMutableArray alloc]init]; 
+    }
+    [self.penalties addObject:infraction];
+}
+
+-(NSArray *)getPenalties
+{
+    return self.penalties;
+}
+
+-(void)addStageResultForStage:(NSString *)stageId stageName:(NSString *)stageName stageLength:(NSString *)stageLength stageTime:(NSString *)stageTime
+{
+    tprStageResults *stageDetails = [[tprStageResults alloc] initWithStageId:stageId
+                                                                   stageName:stageName
+                                                                 stageLength:stageLength
+                                                                   stageTime:stageTime];
+    
+    if (!self.stageResults)
+    {
+        self.stageResults = [[NSMutableArray alloc] init];
+    }
+    [self.stageResults addObject:stageDetails];
+    
+}
+
+-(NSArray *)getResults
+{
+    return self.stageResults; 
 }
 @end

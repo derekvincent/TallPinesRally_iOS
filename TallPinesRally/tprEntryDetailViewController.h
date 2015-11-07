@@ -11,6 +11,7 @@
 @interface tprEntryDetailViewController : UIViewController
 
 @property (strong, nonatomic) id detailItem;
+@property NSUInteger pageIndex;
 
 @property (strong, nonatomic) IBOutlet UILabel* teamLabel; 
 @property (strong, nonatomic) IBOutlet UILabel* driverLabel;

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1A06C5071A0D574300AC3B5E /* tprPenalty.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A06C5061A0D574300AC3B5E /* tprPenalty.m */; };
+		1A06C50B1A0E5B8200AC3B5E /* tprCompetitorDetailPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A06C50A1A0E5B8200AC3B5E /* tprCompetitorDetailPageViewController.m */; };
 		1A2C038116400831007D3F43 /* tprSpectatorDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A2C038016400831007D3F43 /* tprSpectatorDetailViewController.m */; };
 		1A2C038716403F32007D3F43 /* rallyhq.html in Resources */ = {isa = PBXBuildFile; fileRef = 1A2C038616403F32007D3F43 /* rallyhq.html */; };
 		1A2C038B16405343007D3F43 /* golton.html in Resources */ = {isa = PBXBuildFile; fileRef = 1A2C038A16405343007D3F43 /* golton.html */; };
@@ -58,10 +60,18 @@
 		1AA6E6CD1648D820000994E4 /* tprFeedTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AA6E6CC1648D820000994E4 /* tprFeedTableCell.m */; };
 		1AA6E6D0164CB123000994E4 /* schedule.html in Resources */ = {isa = PBXBuildFile; fileRef = 1AA6E6CF164CB123000994E4 /* schedule.html */; };
 		1AA97901176B7EC900D1E72D /* ReadMe in Resources */ = {isa = PBXBuildFile; fileRef = 1AA97900176B7EC900D1E72D /* ReadMe */; };
+		1AD3342E1A12C19B000CAFCB /* tprCompetitorDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AD3342D1A12C19B000CAFCB /* tprCompetitorDetailViewController.m */; };
+		1AD334311A13E0B8000CAFCB /* tprCompetitorResultsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AD334301A13E0B8000CAFCB /* tprCompetitorResultsViewController.m */; };
+		1AD334341A14F0F0000CAFCB /* tprStages.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AD334331A14F0F0000CAFCB /* tprStages.m */; };
+		1AD334371A14FE86000CAFCB /* tprStageResults.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AD334361A14FE86000CAFCB /* tprStageResults.m */; };
 		1AF3BA40183589B100BDC2BD /* UITextView+RPRCustomFont.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AF3BA3F183589B100BDC2BD /* UITextView+RPRCustomFont.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1A06C5051A0D574300AC3B5E /* tprPenalty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tprPenalty.h; sourceTree = "<group>"; };
+		1A06C5061A0D574300AC3B5E /* tprPenalty.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = tprPenalty.m; sourceTree = "<group>"; };
+		1A06C5091A0E5B8200AC3B5E /* tprCompetitorDetailPageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tprCompetitorDetailPageViewController.h; sourceTree = "<group>"; };
+		1A06C50A1A0E5B8200AC3B5E /* tprCompetitorDetailPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = tprCompetitorDetailPageViewController.m; sourceTree = "<group>"; };
 		1A2C037F16400831007D3F43 /* tprSpectatorDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tprSpectatorDetailViewController.h; sourceTree = "<group>"; };
 		1A2C038016400831007D3F43 /* tprSpectatorDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = tprSpectatorDetailViewController.m; sourceTree = "<group>"; };
 		1A2C038616403F32007D3F43 /* rallyhq.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; name = rallyhq.html; path = ../rallyhq.html; sourceTree = "<group>"; };
@@ -137,6 +147,14 @@
 		1AA6E6CC1648D820000994E4 /* tprFeedTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = tprFeedTableCell.m; sourceTree = "<group>"; };
 		1AA6E6CF164CB123000994E4 /* schedule.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = schedule.html; sourceTree = "<group>"; };
 		1AA97900176B7EC900D1E72D /* ReadMe */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ReadMe; sourceTree = "<group>"; };
+		1AD3342C1A12C19B000CAFCB /* tprCompetitorDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tprCompetitorDetailViewController.h; sourceTree = "<group>"; };
+		1AD3342D1A12C19B000CAFCB /* tprCompetitorDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = tprCompetitorDetailViewController.m; sourceTree = "<group>"; };
+		1AD3342F1A13E0B8000CAFCB /* tprCompetitorResultsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tprCompetitorResultsViewController.h; sourceTree = "<group>"; };
+		1AD334301A13E0B8000CAFCB /* tprCompetitorResultsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = tprCompetitorResultsViewController.m; sourceTree = "<group>"; };
+		1AD334321A14F0F0000CAFCB /* tprStages.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tprStages.h; sourceTree = "<group>"; };
+		1AD334331A14F0F0000CAFCB /* tprStages.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = tprStages.m; sourceTree = "<group>"; };
+		1AD334351A14FE86000CAFCB /* tprStageResults.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tprStageResults.h; sourceTree = "<group>"; };
+		1AD334361A14FE86000CAFCB /* tprStageResults.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = tprStageResults.m; sourceTree = "<group>"; };
 		1AF3BA3E183589B100BDC2BD /* UITextView+RPRCustomFont.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextView+RPRCustomFont.h"; sourceTree = "<group>"; };
 		1AF3BA3F183589B100BDC2BD /* UITextView+RPRCustomFont.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextView+RPRCustomFont.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -157,6 +175,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1A06C5081A0D59AF00AC3B5E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				1A2C038F16405A97007D3F43 /* tprCompetitor.h */,
+				1A2C039016405A97007D3F43 /* tprCompetitor.m */,
+				1A06C5051A0D574300AC3B5E /* tprPenalty.h */,
+				1A06C5061A0D574300AC3B5E /* tprPenalty.m */,
+				1A99D72B18230C0700E27BF3 /* tprCompetitors.h */,
+				1A99D72C18230C0700E27BF3 /* tprCompetitors.m */,
+				1AD334321A14F0F0000CAFCB /* tprStages.h */,
+				1AD334331A14F0F0000CAFCB /* tprStages.m */,
+				1AD334351A14FE86000CAFCB /* tprStageResults.h */,
+				1AD334361A14FE86000CAFCB /* tprStageResults.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
 		1A2C03881640421A007D3F43 /* Locations */ = {
 			isa = PBXGroup;
 			children = (
@@ -187,20 +222,23 @@
 		1A2C038E164059A4007D3F43 /* Competitors */ = {
 			isa = PBXGroup;
 			children = (
+				1A06C5091A0E5B8200AC3B5E /* tprCompetitorDetailPageViewController.h */,
+				1A06C50A1A0E5B8200AC3B5E /* tprCompetitorDetailPageViewController.m */,
+				1A06C5081A0D59AF00AC3B5E /* Model */,
 				1A8039BA163A241C00773936 /* tprEntryViewController.h */,
 				1A8039BB163A241C00773936 /* tprEntryViewController.m */,
-				1A2C038F16405A97007D3F43 /* tprCompetitor.h */,
-				1A2C039016405A97007D3F43 /* tprCompetitor.m */,
 				1A2C03A21640639C007D3F43 /* tprCompetitorLoader.h */,
 				1A2C03A31640639C007D3F43 /* tprCompetitorLoader.m */,
 				1A2C03A9164539EB007D3F43 /* tprCompetitorTableCell.h */,
 				1A2C03AA164539EB007D3F43 /* tprCompetitorTableCell.m */,
 				1A2C03AF16455D13007D3F43 /* tprEntryDetailViewController.h */,
 				1A2C03B016455D13007D3F43 /* tprEntryDetailViewController.m */,
-				1A99D72B18230C0700E27BF3 /* tprCompetitors.h */,
-				1A99D72C18230C0700E27BF3 /* tprCompetitors.m */,
 				1A59F0B4182B3D02002B656C /* tprCompetitorNewTableCell.h */,
 				1A59F0B5182B3D02002B656C /* tprCompetitorNewTableCell.m */,
+				1AD3342C1A12C19B000CAFCB /* tprCompetitorDetailViewController.h */,
+				1AD3342D1A12C19B000CAFCB /* tprCompetitorDetailViewController.m */,
+				1AD3342F1A13E0B8000CAFCB /* tprCompetitorResultsViewController.h */,
+				1AD334301A13E0B8000CAFCB /* tprCompetitorResultsViewController.m */,
 			);
 			name = Competitors;
 			sourceTree = "<group>";
@@ -453,9 +491,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1AD3342E1A12C19B000CAFCB /* tprCompetitorDetailViewController.m in Sources */,
 				1A87775A163A087F00CFF85D /* main.m in Sources */,
 				1A87775E163A087F00CFF85D /* tprAppDelegate.m in Sources */,
 				1A87776A163A088000CFF85D /* tprEventInfoViewController.m in Sources */,
+				1AD334371A14FE86000CAFCB /* tprStageResults.m in Sources */,
+				1A06C50B1A0E5B8200AC3B5E /* tprCompetitorDetailPageViewController.m in Sources */,
 				1AF3BA40183589B100BDC2BD /* UITextView+RPRCustomFont.m in Sources */,
 				1A877771163A088000CFF85D /* tprScheduleViewController.m in Sources */,
 				1A8039B9163A23B200773936 /* tprLocationsViewController.m in Sources */,
@@ -471,11 +512,14 @@
 				1A99D72D18230C0700E27BF3 /* tprCompetitors.m in Sources */,
 				1A733C131836E66000B185CF /* FollowMeButton.m in Sources */,
 				1A873DE3182D319800B5F388 /* UILabel+TPRCustomFont.m in Sources */,
+				1A06C5071A0D574300AC3B5E /* tprPenalty.m in Sources */,
 				1A2C03B816460404007D3F43 /* tprFeed.m in Sources */,
+				1AD334311A13E0B8000CAFCB /* tprCompetitorResultsViewController.m in Sources */,
 				1AA6E69016461DF9000994E4 /* tprFeedLoader.m in Sources */,
 				1AA6E6CD1648D820000994E4 /* tprFeedTableCell.m in Sources */,
 				1A59F0B6182B3D02002B656C /* tprCompetitorNewTableCell.m in Sources */,
 				1A733C061836E25400B185CF /* tprAppInfoViewController.m in Sources */,
+				1AD334341A14F0F0000CAFCB /* tprStages.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

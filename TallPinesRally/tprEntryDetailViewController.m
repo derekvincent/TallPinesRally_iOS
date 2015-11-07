@@ -39,7 +39,13 @@
 {
     [super viewDidLoad];
     
-    
+    //if ([self respondsToSelector:@selector(edgesForExtendedLayout)])
+    //{
+    //    self.edgesForExtendedLayout = UIRectEdgeAll;
+    //}
+    //CGSize navBarSize = self.navigationController.navigationBar.bounds.size;
+    //self.view.frame = CGRectMake(0, -20, self.view.frame.size.width, self.view.frame.size.height);
+    //self.view.backgroundColor = [UIColor blueColor];
     
     tprCompetitor* competitor = (tprCompetitor*)self.detailItem;
     self.teamLabel.text = competitor.name;

@@ -44,18 +44,48 @@
 -(void)loadCompetitorsFromWeb
 {
     //TODO: Impliment the web service call to fetch the data from the website.
-    //NSURL *url = [NSURL URLWithString:@"http://www.directdynamics.ca/teams.xml"];
-    NSURL *urlCompetitors = [NSURL URLWithString:@"http://tallpinesrally.com/compete/entrylist?xml=1"];
+    
+    //NSURL *urlCompetitors = [NSURL URLWithString:@"http://tallpinesrally.com/compete/entrylist?xml=1"];
+    //NSURL *urlCompetitors = [NSURL URLWithString:@"http://tallpinesrally.com/compete/entrylist?xml=1&event_id=5"];
     //NSURL *urlOverallResults = [NSURL URLWithString:@"http://kemikal.net/stOver.xml"];
     //NSURL *urlRetirements = [NSURL URLWithString:@"http://kemikal.net/retirement.xml"];
-    NSURL *urlOverallResults = [NSURL URLWithString:@"http://rallyscoring.com/results/2014/TallPines/stOver.xml"];
-    NSURL *urlRetirements = [NSURL URLWithString:@"http://rallyscoring.com/results/2014/TallPines/retirement.xml"];
+   // NSURL *urlOverallResults = [NSURL URLWithString:@"http://rallyscoring.com/results/2013/TallPines/stOver.xml"];
+   // NSURL *urlRetirements = [NSURL URLWithString:@"http://rallyscoring.com/results/2013/TallPines/retirement.xml"];
     
+    bool testingMode = NO;
+    
+    NSURL *urlCompetitors;      // Webservice call for Competitors from TallPines entry list
+    NSURL *urlStages;           // Stage detail summary summary.xml file from Rallyscoring
+    NSURL *urlOverallResults;   // Overall results stOver.xml from RallyScoring
+    NSURL *urlRetirements;      // DNF information from retirments.xml from RallyScoring
+    NSURL *urlPenalties;        // Penalty information from penatly.xml from Rallyscoring
+    NSString *baseDetailURL;    // Base url for stage results details stXX.xml from Rally scoring
+    
+    if (testingMode)
+    {
+        urlCompetitors = [NSURL URLWithString:@"http://tallpinesrally.com/compete/entrylist?xml=1&event_id=5"];
+        urlStages = [NSURL URLWithString:@"http://rallyscoring.com/results/2013/TallPines/summary.xml"];
+        urlOverallResults = [NSURL URLWithString:@"http://rallyscoring.com/results/2013/TallPines/stOver.xml"];
+        urlRetirements = [NSURL URLWithString:@"http://rallyscoring.com/results/2013/TallPines/retirement.xml"];
+        urlPenalties = [NSURL URLWithString:@"http://kemikal.net/penaltyEmpties.xml"];
+        baseDetailURL = @"http://rallyscoring.com/results/2013/TallPines";
+        
+    } else {
+        
+        urlCompetitors = [NSURL URLWithString:@"http://tallpinesrally.com/compete/entrylist?xml=1"];
+        urlStages = [NSURL URLWithString:@"http://rallyscoring.com/results/2014/TallPines/summary.xml"];
+        urlOverallResults = [NSURL URLWithString:@"http://rallyscoring.com/results/2014/TallPines/stOver.xml"];
+        urlRetirements = [NSURL URLWithString:@"http://rallyscoring.com/results/2014/TallPines/retirement.xml"];
+        urlPenalties = [NSURL URLWithString:@"http://rallyscoring.com/results/2014/TallPines/penalty.xml"];
+        baseDetailURL = @"http://rallyscoring.com/results/2014/TallPines";
+        
+    }
+                               
     
     dispatch_async(kBgQueue, ^{
         
         //work in the background
-        BOOL networkIssues;
+        //BOOL networkIssues;
         
         NSError* competitorError = nil;
         
@@ -92,6 +122,7 @@
                 
                 if ([team.status isEqualToString:@"Withdrawn"]) {
                     team.withdrawn = TRUE;
+                    //team.startorder = 900 + team.carNumber;
                 }
                 
                 //NSLog(@"Competitor %i Driver: %@ coDriver %@", team.id, team.driver, team.codriver);
@@ -107,6 +138,33 @@
             //[self saveCompetitorsToStorage];
             // Call this one we have created the Competitors object - important!!!!
             //networkIssues = TRUE;
+            
+            
+            NSError *resultSetError = nil;
+            
+            NSData *resultSetData = [NSData dataWithContentsOfURL:urlStages
+                                                          options:NSDataReadingMappedIfSafe
+                                                            error:&resultSetError];
+            
+            if (resultSetError == nil) {
+                
+                RXMLElement *xml = [RXMLElement elementFromXMLData:resultSetData];
+                NSArray *resultSet = [xml children:@"stage"];
+                
+                for (RXMLElement *e in resultSet) {
+                    NSString *stageId = [[e child:@"id"] text];
+                    NSString *name    = [[e child:@"name"] text];
+                    NSString *length  = [[e child:@"length"] text];
+                    NSString *results = [[e child:@"results"] text];
+                    NSString *completed = [[e child:@"completed"] text];
+                    
+                    [self setStageDetailsWithID:stageId
+                                           name:name
+                                         length:length
+                                     resultFile:results
+                                      completed:completed];
+                }
+            }
             
             // Once we have the competitors we check for the results...
             //We can only do this if we have competitors since we need them to map the results to
@@ -146,6 +204,40 @@
                 //NSLog(@"Error fetching Network Data. Code: %i  Message: %@", callError.code, callError.description);
             }
             
+            // We will iterate over all compeleted stages and grab the results for each stage
+            
+            for (tprStages *stageDetail in self.stages)
+            {
+                NSError* stageDetailsError = nil;
+                
+                if (stageDetail.isCompleted) {
+                    
+                    NSURL *stageUrl = [NSURL URLWithString:[NSString stringWithFormat:@"%@/%@", baseDetailURL, stageDetail.resultFilename]];
+                    
+                    NSData *stageResultData = [NSData dataWithContentsOfURL:stageUrl
+                                                                    options:NSDataReadingMappedIfSafe
+                                                                      error:&stageDetailsError];
+                    
+                    if (stageDetailsError == nil)
+                    {
+                        RXMLElement *xml = [RXMLElement elementFromXMLData:stageResultData];
+                        NSArray *stageDetailResults = [xml children:@"Competitor"];
+                        for (RXMLElement *e in stageDetailResults)
+                        {
+                            NSInteger carNumber = [[e child:@"Number"] textAsInt];
+                            NSString *stageTime = [[e child:@"StageTime"] text];
+                            
+                            [self setCompetitorStageDetailResultWithCarNumber:carNumber
+                                                                      stageId:stageDetail.stageId
+                                                                    stageName:stageDetail.name
+                                                                  stageLength:stageDetail.stageLength
+                                                                    stageTime:stageTime];
+                            
+                        }
+                    }
+                }
+            }
+            
             // We will also grab the retirements list...
             
             NSError* dnfError = nil;
@@ -177,6 +269,48 @@
                 //NSLog(@"Error fetching Network Data. Code: %i  Message: %@", callError.code, callError.description);
             }
 
+            // We will also get any penalty information for the competitors
+            
+            NSError *penaltyError = nil;
+            NSData *penaltyData = [NSData dataWithContentsOfURL:urlPenalties
+                                                        options:NSDataReadingMappedIfSafe
+                                                          error:&penaltyError];
+            if (penaltyError == nil)
+            {
+                RXMLElement *xml = [RXMLElement elementFromXMLData:penaltyData];
+                NSArray *penalties = [xml children:@"competitor"];
+                
+                // This is in just in case JGM does not fix the file and remove the empty car number in sequence...
+                // It will store the last car number in the loop and do a check if the number from the file is 0
+                // if it is it will set carNumber to the last car used for a penalty... When carNumber changes it will
+                // update lastCarNumber
+                
+                NSInteger lastCarNumber = 0;
+                
+                for (RXMLElement *e in penalties)
+                {
+                    NSInteger carNumber = [[e child:@"number"] textAsInt];
+                    NSString *driverCodriver = [[e child:@"driverCoDriver"] text];
+                    //NSString *groupClass = [[e child:@"groupClass"] text];
+                    NSString *control = [[e child:@"control"] text];
+                    NSString *remark = [[e child:@"remark"] text];
+                    NSString *penalty = [[e child:@"penalty"] text];
+                    
+                    if (carNumber == 0)
+                    {
+                        carNumber = lastCarNumber;
+                    } else {
+                        lastCarNumber = carNumber;
+                    }
+                    
+                    [self setCompetitorPenaltyWithCarNumber:carNumber
+                                             driverCodriver:driverCodriver
+                                                    control:control
+                                                     remark:remark
+                                                    penalty:penalty];
+                    
+                }
+            }
             // Here!!!
             
             // After all said and done...
@@ -185,10 +319,11 @@
             if (self.hasStartingOrder && !self.hasResults)
             {
                 // Sort by starting order when we do not have results
+                NSSortDescriptor *withdrawnDescriptor = [[NSSortDescriptor alloc] initWithKey:@"withdrawn" ascending:YES];
                 NSSortDescriptor *dnfDescriptior = [[NSSortDescriptor alloc] initWithKey:@"dnf" ascending:YES];
                 NSSortDescriptor *startingOrderDescriptor = [[NSSortDescriptor alloc] initWithKey:@"startorder" ascending:TRUE];
                 
-                NSArray *competitorSortDescriptors = @[dnfDescriptior, startingOrderDescriptor];
+                NSArray *competitorSortDescriptors = @[withdrawnDescriptor, dnfDescriptior, startingOrderDescriptor];
                 
                 [_competitors sortUsingDescriptors:competitorSortDescriptors];
             }
@@ -200,6 +335,7 @@
                 [_competitors enumerateObjectsUsingBlock:^(tprCompetitor *competitor, NSUInteger idx, BOOL *stop) {
                     if (competitor.overallPosition == 0)
                     {
+                        //competitor.overallPosition = 800 + competitor.carNumber;
                         competitor.overallPosition = 999;
                     }
                 }];
@@ -207,10 +343,11 @@
                 //  First Sorter - isDNF (want DNF car lst)...
                 //  Second Sorter - Position
                 
+                NSSortDescriptor *withdrawnDescriptor = [[NSSortDescriptor alloc] initWithKey:@"withdrawn" ascending:YES];
                 NSSortDescriptor *dnfDescriptior = [[NSSortDescriptor alloc] initWithKey:@"dnf" ascending:YES];
                 NSSortDescriptor *positionDescriptor = [[NSSortDescriptor alloc] initWithKey:@"overallPosition" ascending:YES];
                 
-                NSArray *competitorSortDescriptor = @[dnfDescriptior, positionDescriptor];
+                NSArray *competitorSortDescriptor = @[withdrawnDescriptor, dnfDescriptior, positionDescriptor];
                 
                 [_competitors sortUsingDescriptors:competitorSortDescriptor];
                 
@@ -268,6 +405,49 @@
     }];
 }
 
+-(void)setCompetitorPenaltyWithCarNumber:(NSInteger)carNumber driverCodriver:(NSString *)driverCodriver control:(NSString *)control remark:(NSString *)remark penalty:(NSString *)penalty
+{
+    [_competitors enumerateObjectsUsingBlock:^(tprCompetitor *competitor, NSUInteger idx, BOOL *stop) {
+        
+        if (competitor.carNumber == carNumber)
+        {
+            [competitor addPenalty:penalty control:control remark:remark driverCodriver:driverCodriver];
+        }
+    }];
+}
+
+-(void)setCompetitorStageDetailResultWithCarNumber:(NSInteger)carNumber stageId:(NSString *)stageId stageName:(NSString *)stageName stageLength:(NSString *)stageLength stageTime:(NSString *)stageTime
+{
+    [_competitors enumerateObjectsUsingBlock:^(tprCompetitor *competitor, NSUInteger idx, BOOL *stop) {
+        if (competitor.carNumber == carNumber) {
+            [competitor addStageResultForStage:stageId
+                                     stageName:stageName
+                                   stageLength:stageLength
+                                     stageTime:stageTime];
+        }
+    }];
+
+}
+
+-(void)setStageDetailsWithID:(NSString *)stageId name:(NSString *)name length:(NSString *)length resultFile:(NSString *)resultFile completed:(NSString *)completed
+{
+    tprStages *stageDetail = [[tprStages alloc] init];
+    stageDetail.stageId = stageId;
+    stageDetail.name = name;
+    stageDetail.stageLength = length;
+    stageDetail.resultFilename = resultFile;
+    [stageDetail setCompletedStatus:completed];
+    
+    
+    if (!self.stages)
+    {
+        self.stages = [[NSMutableArray alloc] init];
+    }
+    
+    [self.stages addObject:stageDetail];
+    
+}
+
 -(void)saveCompetitorsToStorage {
     
     // Store the array to the archive file
@@ -280,4 +460,29 @@
     };
    
 }
+
+-(NSMutableArray *)getAll2WDCompetitors
+{
+    NSPredicate *filterPredicate = [NSPredicate predicateWithFormat:@"(class = %@) OR (class = %@) OR (class =%@)", @"Production 2WD", @"Open 2WD", @"Group 5"];
+
+    NSMutableArray *filteredArray = [[NSMutableArray alloc] initWithArray:_competitors];
+
+    [filteredArray filterUsingPredicate:filterPredicate];
+    
+    return filteredArray;
+
+}
+
+-(NSMutableArray *)getAll4WDCompetitors
+{
+    NSPredicate *filterPredicate = [NSPredicate predicateWithFormat:@"(class = %@) OR (class = %@)", @"Production 4WD", @"Open 4WD"];
+    
+    NSMutableArray *filteredArray = [[NSMutableArray alloc] initWithArray:_competitors];
+    
+    [filteredArray filterUsingPredicate:filterPredicate];
+    
+    return filteredArray;
+    
+}
+
 @end
