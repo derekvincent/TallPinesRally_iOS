@@ -216,7 +216,8 @@
     cell.position.textColor = [UIColor blackColor];
     cell.totalTime.textColor = [UIColor blackColor];
     cell.carNumberLabel.textColor = [UIColor whiteColor];
-    
+    cell.backgroundCircle.layer.cornerRadius = 23;
+    cell.backgroundCircle.layer.masksToBounds = YES;
     
     //cell.driverNameLabel.text = object.driver;
     //cell.codriverNameLabel.text = object.codriver;
@@ -311,7 +312,7 @@
         cell.backgroundColor = [UIColor colorWithRed:255.0f/255.0f green:99.0f/255.0f blue:71.0f/255.0f alpha:0.1];
         cell.position.textColor = [UIColor redColor];
         cell.totalTime.textColor = [UIColor redColor];
-        cell.carNumberLabel.textColor = [UIColor redColor];
+        //cell.carNumberLabel.textColor = [UIColor redColor];
         
         cell.position.text = @"DNF";
         cell.totalTime.text = object.dnfStage;

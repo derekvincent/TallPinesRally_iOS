@@ -19,5 +19,6 @@
 @property (nonatomic, weak) IBOutlet UILabel *totalTime;
 @property (nonatomic, weak) IBOutlet UILabel *diffToLeader;
 @property (nonatomic, weak) IBOutlet UILabel *diffToPrevious;
+@property (nonatomic, weak) IBOutlet UIImageView *backgroundCircle;
 
 @end

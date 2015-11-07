@@ -27,6 +27,7 @@
     [_locationsArray addObject:[NSMutableArray arrayWithObjects:@"Service Area & Rally HQ",@"Enjoy a behind the scenes view into the cars and service crews. As well as the cerimonial start and finsih of the event.", @"rallyhq", nil]];
     [_locationsArray addObject:[NSMutableArray arrayWithObjects:@"Iron Bridge Spectator Area",@"The classic and popular Iron Bridge area never fails to entertain!", @"ironbridge", nil]];
     [_locationsArray addObject:[NSMutableArray arrayWithObjects:@"Golton Super Special Spectator Area",@"Superb viewing of the cars in action at this Super Special night stage.",@"golton", nil]];
+    [_locationsArray addObject:[NSMutableArray arrayWithObjects:@"Detlor Crossing Night Spectator Area",@"This is the make-or-break stage! Breaking free of the gravel, hitting the pavement of Detlor Road, swinging through the short jog to the east.",@"detlorcrossing", nil]];
 
     self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
 }
@@ -65,7 +66,7 @@
 {
     //UITableViewCell *cell = [self tableView:tableView cellForRowAtIndexPath:indexPath];
     //return cell.frame.size.height;
-    return 100;
+    return 105;
 
 }
 

@@ -52,7 +52,7 @@
    // NSURL *urlOverallResults = [NSURL URLWithString:@"http://rallyscoring.com/results/2013/TallPines/stOver.xml"];
    // NSURL *urlRetirements = [NSURL URLWithString:@"http://rallyscoring.com/results/2013/TallPines/retirement.xml"];
     
-    bool testingMode = NO;
+    bool testingMode = YES;
     
     NSURL *urlCompetitors;      // Webservice call for Competitors from TallPines entry list
     NSURL *urlStages;           // Stage detail summary summary.xml file from Rallyscoring
@@ -63,21 +63,21 @@
     
     if (testingMode)
     {
-        urlCompetitors = [NSURL URLWithString:@"http://tallpinesrally.com/compete/entrylist?xml=1&event_id=5"];
-        urlStages = [NSURL URLWithString:@"http://rallyscoring.com/results/2013/TallPines/summary.xml"];
-        urlOverallResults = [NSURL URLWithString:@"http://rallyscoring.com/results/2013/TallPines/stOver.xml"];
-        urlRetirements = [NSURL URLWithString:@"http://rallyscoring.com/results/2013/TallPines/retirement.xml"];
-        urlPenalties = [NSURL URLWithString:@"http://kemikal.net/penaltyEmpties.xml"];
-        baseDetailURL = @"http://rallyscoring.com/results/2013/TallPines";
-        
-    } else {
-        
-        urlCompetitors = [NSURL URLWithString:@"http://tallpinesrally.com/compete/entrylist?xml=1"];
+        urlCompetitors = [NSURL URLWithString:@"http://tallpinesrally.com/compete/entrylist?xml=1&event_id=6"];
         urlStages = [NSURL URLWithString:@"http://rallyscoring.com/results/2014/TallPines/summary.xml"];
         urlOverallResults = [NSURL URLWithString:@"http://rallyscoring.com/results/2014/TallPines/stOver.xml"];
         urlRetirements = [NSURL URLWithString:@"http://rallyscoring.com/results/2014/TallPines/retirement.xml"];
         urlPenalties = [NSURL URLWithString:@"http://rallyscoring.com/results/2014/TallPines/penalty.xml"];
         baseDetailURL = @"http://rallyscoring.com/results/2014/TallPines";
+        
+    } else {
+        
+        urlCompetitors = [NSURL URLWithString:@"http://tallpinesrally.com/compete/entrylist?xml=1"];
+        urlStages = [NSURL URLWithString:@"http://rallyscoring.com/results/2015/TallPines/summary.xml"];
+        urlOverallResults = [NSURL URLWithString:@"http://rallyscoring.com/results/2015/TallPines/stOver.xml"];
+        urlRetirements = [NSURL URLWithString:@"http://rallyscoring.com/results/2015/TallPines/retirement.xml"];
+        urlPenalties = [NSURL URLWithString:@"http://rallyscoring.com/results/2015/TallPines/penalty.xml"];
+        baseDetailURL = @"http://rallyscoring.com/results/2015/TallPines";
         
     }
                                

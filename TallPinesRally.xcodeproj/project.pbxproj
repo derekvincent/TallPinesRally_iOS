@@ -47,11 +47,10 @@
 		1A87775E163A087F00CFF85D /* tprAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A87775D163A087F00CFF85D /* tprAppDelegate.m */; };
 		1A877767163A087F00CFF85D /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1A877765163A087F00CFF85D /* MainStoryboard.storyboard */; };
 		1A87776A163A088000CFF85D /* tprEventInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A877769163A088000CFF85D /* tprEventInfoViewController.m */; };
-		1A87776C163A088000CFF85D /* first.png in Resources */ = {isa = PBXBuildFile; fileRef = 1A87776B163A088000CFF85D /* first.png */; };
-		1A87776E163A088000CFF85D /* first@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1A87776D163A088000CFF85D /* first@2x.png */; };
 		1A877771163A088000CFF85D /* tprScheduleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A877770163A088000CFF85D /* tprScheduleViewController.m */; };
 		1A8CD7A11839C54D0067F0D3 /* fblikebutton.png in Resources */ = {isa = PBXBuildFile; fileRef = 1A8CD7A01839C54D0067F0D3 /* fblikebutton.png */; };
 		1A8CD7A31839C59E0067F0D3 /* fblikebutton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1A8CD7A21839C59E0067F0D3 /* fblikebutton@2x.png */; };
+		1A991D651BEDCADD00B44322 /* detlorcrossing.html in Resources */ = {isa = PBXBuildFile; fileRef = 1A991D641BEDCADD00B44322 /* detlorcrossing.html */; };
 		1A99D72D18230C0700E27BF3 /* tprCompetitors.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A99D72C18230C0700E27BF3 /* tprCompetitors.m */; };
 		1AA6E69016461DF9000994E4 /* tprFeedLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AA6E68F16461DF9000994E4 /* tprFeedLoader.m */; };
 		1AA6E6BD16489727000994E4 /* tp_hq.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1AA6E6BC16489727000994E4 /* tp_hq.jpg */; };
@@ -130,12 +129,11 @@
 		1A877766163A087F00CFF85D /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
 		1A877768163A087F00CFF85D /* tprEventInfoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = tprEventInfoViewController.h; sourceTree = "<group>"; };
 		1A877769163A088000CFF85D /* tprEventInfoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = tprEventInfoViewController.m; sourceTree = "<group>"; };
-		1A87776B163A088000CFF85D /* first.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = first.png; sourceTree = "<group>"; };
-		1A87776D163A088000CFF85D /* first@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "first@2x.png"; sourceTree = "<group>"; };
 		1A87776F163A088000CFF85D /* tprScheduleViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = tprScheduleViewController.h; sourceTree = "<group>"; };
 		1A877770163A088000CFF85D /* tprScheduleViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = tprScheduleViewController.m; sourceTree = "<group>"; };
 		1A8CD7A01839C54D0067F0D3 /* fblikebutton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fblikebutton.png; sourceTree = "<group>"; };
 		1A8CD7A21839C59E0067F0D3 /* fblikebutton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "fblikebutton@2x.png"; sourceTree = "<group>"; };
+		1A991D641BEDCADD00B44322 /* detlorcrossing.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = detlorcrossing.html; sourceTree = "<group>"; };
 		1A99D72B18230C0700E27BF3 /* tprCompetitors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tprCompetitors.h; sourceTree = "<group>"; };
 		1A99D72C18230C0700E27BF3 /* tprCompetitors.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = tprCompetitors.m; sourceTree = "<group>"; };
 		1AA6E68E16461DF9000994E4 /* tprFeedLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tprFeedLoader.h; sourceTree = "<group>"; };
@@ -205,6 +203,7 @@
 				1A2C038616403F32007D3F43 /* rallyhq.html */,
 				1A2C038A16405343007D3F43 /* golton.html */,
 				1A2C038C16405353007D3F43 /* ironbridge.html */,
+				1A991D641BEDCADD00B44322 /* detlorcrossing.html */,
 			);
 			name = Locations;
 			sourceTree = "<group>";
@@ -348,8 +347,6 @@
 				1A877765163A087F00CFF85D /* MainStoryboard.storyboard */,
 				1A7819CA19E4ACCB001A01FB /* Media.xcassets */,
 				1A2C03891640425F007D3F43 /* Event Info */,
-				1A87776B163A088000CFF85D /* first.png */,
-				1A87776D163A088000CFF85D /* first@2x.png */,
 				1AA6E6CE164CAD8E000994E4 /* Schedule */,
 				1A877754163A087F00CFF85D /* Supporting Files */,
 				1A733C071836E25C00B185CF /* App Info */,
@@ -427,7 +424,7 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = tpr;
-				LastUpgradeCheck = 0600;
+				LastUpgradeCheck = 0710;
 				ORGANIZATIONNAME = "Derek Vincent";
 				TargetAttributes = {
 					1A877748163A087F00CFF85D = {
@@ -459,9 +456,8 @@
 			files = (
 				1A877758163A087F00CFF85D /* InfoPlist.strings in Resources */,
 				1A877767163A087F00CFF85D /* MainStoryboard.storyboard in Resources */,
-				1A87776C163A088000CFF85D /* first.png in Resources */,
 				1A873DDF182D2B1200B5F388 /* ITCAvantGardeStd-Md.otf in Resources */,
-				1A87776E163A088000CFF85D /* first@2x.png in Resources */,
+				1A991D651BEDCADD00B44322 /* detlorcrossing.html in Resources */,
 				1A873DE5182D470000B5F388 /* black_circle_55.png in Resources */,
 				1A8039B6163A1EAA00773936 /* EventInfo.html in Resources */,
 				1A873DE0182D2B1500B5F388 /* ITCAvantGardeStd-Demi.otf in Resources */,
@@ -557,6 +553,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				COPY_PHASE_STRIP = NO;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -611,6 +608,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				OTHER_LDFLAGS = "-all_load";
 				"OTHER_LDFLAGS[arch=*]" = "-all_load";
+				PRODUCT_BUNDLE_IDENTIFIER = "net.kemikal.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "Rally of the Tall Pines";
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
@@ -623,7 +621,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Derek Vincent (J82T7C2UD7)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TallPinesRally/TallPinesRally-Prefix.pch";
@@ -631,6 +629,7 @@
 				INFOPLIST_FILE = "TallPinesRally/TallPinesRally-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				OTHER_LDFLAGS = "-all_load";
+				PRODUCT_BUNDLE_IDENTIFIER = "net.kemikal.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "Rally of the Tall Pines";
 				PROVISIONING_PROFILE = "43908A41-0911-4B52-B335-6D17EB1AFBDC";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
