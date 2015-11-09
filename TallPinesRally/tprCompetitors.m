@@ -52,7 +52,7 @@
    // NSURL *urlOverallResults = [NSURL URLWithString:@"http://rallyscoring.com/results/2013/TallPines/stOver.xml"];
    // NSURL *urlRetirements = [NSURL URLWithString:@"http://rallyscoring.com/results/2013/TallPines/retirement.xml"];
     
-    bool testingMode = YES;
+    bool testingMode = NO;
     
     NSURL *urlCompetitors;      // Webservice call for Competitors from TallPines entry list
     NSURL *urlStages;           // Stage detail summary summary.xml file from Rallyscoring
