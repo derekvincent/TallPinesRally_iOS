@@ -2,17 +2,17 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "tp2016banner-2.png",
+      "filename" : "backgroundcircle-2.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "tp2016banner-1.png",
+      "filename" : "backgroundcircle-1.png",
       "scale" : "2x"
     },
     {
       "idiom" : "universal",
-      "filename" : "tp2016banner.png",
+      "filename" : "backgroundcircle.png",
       "scale" : "3x"
     }
   ],

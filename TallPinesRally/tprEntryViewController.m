@@ -50,7 +50,8 @@
     // Testing custom area above cells and below pull to refresh
     
     CGFloat headerHeight = 45.0f;
-    CGFloat headerWidth = 320.0f;
+    //CGFloat headerWidth = 320.0f;
+    CGFloat headerWidth = [[UIScreen mainScreen] bounds].size.width;
     UIView *headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, headerWidth, headerHeight)];
     UIView *headerContentView = [[UIView alloc]initWithFrame:headerView.bounds];
 
@@ -60,13 +61,21 @@
     // Setup the Content of the Header View
     UISegmentedControl *headerFilter = [[UISegmentedControl alloc] initWithItems:@[@"All", @"2WD", @"4WD"]];
     
+//    NSDictionary *headerFilterNormalAttributes = [NSDictionary dictionaryWithObjectsAndKeys:
+//                                            [UIFont fontWithName:@"ITCAvantGardeStd-Md" size:14], UITextAttributeFont,
+//                                            nil];
+
     NSDictionary *headerFilterNormalAttributes = [NSDictionary dictionaryWithObjectsAndKeys:
-                                            [UIFont fontWithName:@"ITCAvantGardeStd-Md" size:14], UITextAttributeFont,
-                                            nil];
-    
+                                                  [UIFont fontWithName:@"ITCAvantGardeStd-Md" size:14], NSFontAttributeName,
+                                                  nil];
+//    NSDictionary *headerFilterHighlightedAttributes = [NSDictionary dictionaryWithObjectsAndKeys:
+//                                                       [UIFont fontWithName:@"ITCAvantGardeStd-Demi" size:16], UITextAttributeFont,
+//                                                       [UIColor lightGrayColor], UITextAttributeTextColor,
+//                                                       nil];
+
     NSDictionary *headerFilterHighlightedAttributes = [NSDictionary dictionaryWithObjectsAndKeys:
-                                                       [UIFont fontWithName:@"ITCAvantGardeStd-Demi" size:16], UITextAttributeFont,
-                                                       [UIColor lightGrayColor], UITextAttributeTextColor,
+                                                       [UIFont fontWithName:@"ITCAvantGardeStd-Demi" size:16], NSFontAttributeName,
+                                                       [UIColor lightGrayColor], NSForegroundColorAttributeName,
                                                        nil];
     
     [headerFilter setTitleTextAttributes:headerFilterNormalAttributes forState:UIControlStateNormal];

@@ -63,21 +63,21 @@
     
     if (testingMode)
     {
-        urlCompetitors = [NSURL URLWithString:@"http://tallpinesrally.com/compete/entrylist?xml=1&event_id=6"];
-        urlStages = [NSURL URLWithString:@"http://rallyscoring.com/results/2014/TallPines/summary.xml"];
-        urlOverallResults = [NSURL URLWithString:@"http://rallyscoring.com/results/2014/TallPines/stOver.xml"];
-        urlRetirements = [NSURL URLWithString:@"http://rallyscoring.com/results/2014/TallPines/retirement.xml"];
-        urlPenalties = [NSURL URLWithString:@"http://rallyscoring.com/results/2014/TallPines/penalty.xml"];
-        baseDetailURL = @"http://rallyscoring.com/results/2014/TallPines";
-        
-    } else {
-        
-        urlCompetitors = [NSURL URLWithString:@"http://tallpinesrally.com/compete/entrylist?xml=1"];
+        urlCompetitors = [NSURL URLWithString:@"http://tallpinesrally.com/compete/entrylist?xml=1&event_id=7"];
         urlStages = [NSURL URLWithString:@"http://rallyscoring.com/results/2015/TallPines/summary.xml"];
         urlOverallResults = [NSURL URLWithString:@"http://rallyscoring.com/results/2015/TallPines/stOver.xml"];
         urlRetirements = [NSURL URLWithString:@"http://rallyscoring.com/results/2015/TallPines/retirement.xml"];
         urlPenalties = [NSURL URLWithString:@"http://rallyscoring.com/results/2015/TallPines/penalty.xml"];
         baseDetailURL = @"http://rallyscoring.com/results/2015/TallPines";
+        
+    } else {
+        
+        urlCompetitors = [NSURL URLWithString:@"http://tallpinesrally.com/compete/entrylist?xml=1"];
+        urlStages = [NSURL URLWithString:@"http://rallyscoring.com/results/2016/TallPines/summary.xml"];
+        urlOverallResults = [NSURL URLWithString:@"http://rallyscoring.com/results/2016/TallPines/stOver.xml"];
+        urlRetirements = [NSURL URLWithString:@"http://rallyscoring.com/results/2016/TallPines/retirement.xml"];
+        urlPenalties = [NSURL URLWithString:@"http://rallyscoring.com/results/2016/TallPines/penalty.xml"];
+        baseDetailURL = @"http://rallyscoring.com/results/2016/TallPines";
         
     }
                                
